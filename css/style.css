@@ -1,0 +1,82 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  font-family: "PT Sans Caption", sans-serif;
+  background-color: #f7ecde;
+}
+*::selection {
+  background-color: #fec260;
+  color: #352e28;
+}
+:root {
+  --btn-visit-color: #9eb23b;
+}
+h1 {
+  font-family: "Pacifico", "cursive";
+  font-weight: 500;
+  font-size: 3.125rem;
+  /* margin-inline:auto; */
+  text-align: center;
+  position: relative;
+}
+h1::after {
+  position: absolute;
+  content: "";
+  width: 81.5%;
+  height: 25%;
+  background-color: #fec260;
+  left: 30px;
+  bottom: 10px;
+  z-index: -5;
+  transition: height 350ms;
+}
+h1:hover:after {
+  height: 50%;
+}
+.Bookmarker-body {
+  border-width: 2px 0 2px 0;
+  border-style: dotted;
+  border-color: #352e28;
+}
+
+.Bookmarker-body h2 {
+  font-family: "Righteous", sans-serif;
+  font-weight: 500;
+  width: auto;
+  font-size: 1.5625rem;
+  font-size: 25px;
+  background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Bookmarker-body .btn-submit {
+  width: 10rem;
+}
+.w-31rem {
+  width: 31.25rem;
+  z-index: 10;
+}
+.box-msg {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.box-paragraph {
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-size: 21px;
+}
+.btn-visit {
+  background-color: var(--btn-visit-color);
+  color: #fff;
+}
+.btn-visit:hover {
+  background-color: #9bb808;
+  color: #fff;
+}
+/* input:focus {
+  box-shadow: #fec260 0 0 4px 3px !important;
+} */
