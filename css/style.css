@@ -80,3 +80,13 @@ h1:hover:after {
 /* input:focus {
   box-shadow: #fec260 0 0 4px 3px !important;
 } */
+
+@media screen and ( max-width: 970px ) {
+  
+  h1{ 
+
+    width: auto !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+}
