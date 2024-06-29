@@ -25,11 +25,14 @@ h1 {
 h1::after {
   position: absolute;
   content: "";
-  width: 81.5%;
+  text-align: center;
+  /* width: 81.5%; */
+  width: 268px;
   height: 25%;
   background-color: #fec260;
-  left: 30px;
-  bottom: 10px;
+  /* left: 500px; */
+  left: 39.7%;
+  bottom: 0.625rem;
   z-index: -5;
   transition: height 350ms;
 }
@@ -44,10 +47,9 @@ h1:hover:after {
 
 .Bookmarker-body h2 {
   font-family: "Righteous", sans-serif;
+  margin-inline: auto;
   font-weight: 500;
-  width: auto;
   font-size: 1.5625rem;
-  font-size: 25px;
   background-image: linear-gradient(to right, #3ca55c, #b5ac49);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -55,15 +57,7 @@ h1:hover:after {
 .Bookmarker-body .btn-submit {
   width: 10rem;
 }
-.w-31rem {
-  width: 31.25rem;
-  z-index: 10;
-}
-.box-msg {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
+
 .box-paragraph {
   font-family: "Bree Serif", serif;
   font-weight: 400;
@@ -77,16 +71,57 @@ h1:hover:after {
   background-color: #9bb808;
   color: #fff;
 }
-/* input:focus {
-  box-shadow: #fec260 0 0 4px 3px !important;
-} */
+input:focus {
+  box-shadow: 0 0 3px 2px rgb(232, 129, 26) !important;
+}
 
-@media screen and ( max-width: 970px ) {
-  
-  h1{ 
+.light-contanier {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+}
 
-    width: auto !important;
-    text-align: center !important;
-    margin-inline: auto !important;
+.light-contanier .box-msg {
+  width: 28.125rem;
+  height: 18.125rem;
+  /* border: #882b1a solid 3px; */
+}
+
+.light-contanier .box-msg .box-body .box-paragraph {
+  font-size: 20px;
+  font-weight: 450;
+}
+
+.bg-icon {
+  background-color: red;
+  font-size: 20px;
+  padding: 6px;
+}
+.padding-6 {
+  padding: 6px;
+}
+
+#btnSubmit {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  h1::after {
+    position: absolute;
+    content: "";
+    text-align: center;
+    /* width: 81.5%; */
+    width: 263px;
+    height: 25%;
+    background-color: #fec260;
+    /* left: 500px; */
+    left: 3.375rem;
+    bottom: 0.625rem;
+    z-index: -5;
+    transition: height 350ms;
   }
 }

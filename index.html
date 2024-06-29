@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="images/sush-icon.png " type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="images/sush-icon.png "
+      type="image/x-icon"
+    />
     <title>Bookmarker</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link 
+    <link
       href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
-      rel="stylesheet"/>
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -20,105 +25,137 @@
     <main class="crud-parent position-relative">
       <section class="">
         <div class="container mt-5">
-          <h1 class="py-2 mx-auto w-25 text-center mb-5">Bookmarker</h1>
-
-          <!-- ================== Crud Inputs ================= -->
-          <div
-            class="Bookmarker-body row p-4 py-4 d-flex align-items-center justify-content-center gap-4 my-4"
-          >
-            <h2 class="text-center">
-              <i class="fa-solid fa-bookmark"></i>
-              Bookmark your favorite sites
-              <i class="fa-solid fa-bookmark"></i>
-            </h2>
-
-            <div
-              class="site-name w-100 d-flex flex-column justify-content-center"
-            >
-              <label for="bookmarkName" class=" pb-2 fw-semibold">
-                <i class="fa-solid  fa-book-bookmark pe-2"></i>
-                Site Name
-              </label>
-              <input
-                type="text"
-                placeholder="Bookmark Name"
-                oninput="validationInputs(this)"
-                class="form-control"
-                id="bookmarkName"
-                fdprocessedid="rsh028"
-                spellcheck="false"
-                data-ms-editor="true"/>
-            </div>
-
-            <div
-              class="site-url w-100 d-flex flex-column justify-content-center"
-            >
-              <label for="bookmarkURL" class="pb-2 fw-semibold">
-                <i class="fa-solid fa-link pe-2"></i>Site URL</label
+          <h1 class="py-2 mx-auto text-center mb-5">Bookmarker</h1>
+          <div class="row">
+            <div class="col-md-12">
+              <!-- ================== Crud Inputs ================= -->
+              <div
+                class="Bookmarker-body row p-4 py-4 d-flex align-items-center justify-content-center gap-4 my-4"
               >
-              <input
-                type="url"
-                oninput="validationInputs(this)"
-                placeholder="Website URL"
-                class="form-control"
-                id="bookmarkURL"
-              />
-            </div>
+                <h2 class="text-center">
+                  <i class="fa-solid fa-bookmark"></i>
+                  Bookmark your favorite sites
+                  <i class="fa-solid fa-bookmark"></i>
+                </h2>
 
-            <button onclick="addWebSit()" id="btnSubmit" class="btn btn-danger btn-submit">Submit</button>
-          </div>
-          <!-- ================== Box Msg ================= -->
-          <div
-            class="box-msg d-none w-31rem mx-auto bg-white rounded-2 shadow-lg p-4 position-absolute"
-            id="boxInfo"
-          >
-            <div
-              class="header-box d-flex justify-content-between align-items-center"
-            >
-              <div class="circle">
-                <span class="text-danger">
-                  <i class="fa-solid fa-circle"></i>
-                </span>
-                <span class="text-warning">
-                  <i class="fa-solid fa-circle"></i>
-                </span>
-                <span class="text-success">
-                  <i class="fa-solid fa-circle"></i>
-                </span>
-              </div>
-              <div class="close-btn">
-                <button
-                  id="close-btn"
-                  onclick="closeBtn()"
-                  class="close-btn border-0 bg-transparent"
+                <div
+                  class="site-name w-100 d-flex flex-column justify-content-center"
                 >
-                  <i class="fa-solid fa-xmark close fs-3"></i>
+                  <label for="bookmarkName" class="pb-2 fw-semibold">
+                    <i class="fa-solid fa-book-bookmark pe-2 text-danger"></i>
+                    Site Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Bookmark Name"
+                    oninput="validationInputs(this)"
+                    class="form-control"
+                    id="bookmarkName"
+                    fdprocessedid="rsh028"
+                    spellcheck="false"
+                    data-ms-editor="true"
+                  />
+                </div>
+
+                <div
+                  class="site-url w-100 d-flex flex-column justify-content-center"
+                >
+                  <label for="bookmarkURL" class="pb-2 fw-semibold">
+                    <i class="fa-solid fa-link pe-2 text-danger"></i>Site
+                    URL</label
+                  >
+                  <input
+                    type="url"
+                    oninput="validationInputs(this)"
+                    placeholder="Website URL"
+                    class="form-control"
+                    id="bookmarkURL"
+                  />
+                </div>
+
+                <button
+                  onclick="addWebSit()"
+                  id="btnSubmit"
+                  class="btn btn-danger rounded-pill btn-submit"
+                >
+                  Submit
                 </button>
               </div>
-            </div>
+              <!-- ================== Box Msg ================= -->
+              <div class="light-contanier d-none" id="boxInfo">
+                <div class="box-msg mx-auto bg-white rounded-2 shadow-lg p-4">
+                  <div
+                    class="header-box d-flex justify-content-between align-items-center"
+                  >
+                    <div class="circle">
+                      <span class="text-danger">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                      <span class="text-warning">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                      <span class="text-success">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                    </div>
+                    <div class="close-btn">
+                      <button
+                        id="close-btn"
+                        onclick="closeBtn()"
+                        class="close-btn border-0 bg-transparent"
+                      >
+                        <i class="fa-solid fa-xmark close fs-3"></i>
+                      </button>
+                    </div>
+                  </div>
 
-            <div class="box-body">
-              <p class="box-paragraph my-4">
-                Site Name or Url is not valid, Please follow the rules below :
-              </p>
-              <div class="">
-                <div class="">
-                  <span>
-                    <i class="text-danger fa-regular fa-circle-right p-2"></i>
-                  </span>
-                  <span>Site name must contain From 3 to 35 characters</span>
-                </div>
-                <div class="">
-                  <span>
-                    <i class="text-danger fa-regular fa-circle-right p-2"></i>
-                  </span>
-                  <span>Site URL must be a valid one</span>
+                  <div class="box-body">
+                    <p class="box-paragraph my-4">
+                      Site Name or Url is not valid, Please follow the rules
+                      below :
+                    </p>
+                    <div class="">
+                      <div class=" ">
+                        <span>
+                          <i
+                            class="text-danger fa-regular fa-circle-right p-2"
+                          ></i>
+                        </span>
+                        <span
+                          >Site name must contain From 3 to 35 characters</span
+                        >
+                      </div>
+                      <div class="">
+                        <span>
+                          <i
+                            class="text-danger fa-regular fa-circle-right p-2"
+                          ></i>
+                        </span>
+                        <span>Site URL must be a valid one</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- ================== Table Data ================= -->      
-          <table class="table text-center my-4">
+              <!-- =================== box input ================= -->
+              <div class="box-input w-75 my-4 mx-auto d-flex mb-3">
+                <span class="bg-icon rounded text-white">
+                  <i
+                    class="fa-solid fa-magnifying-glass padding-6 ms-0 me-0 rounded"
+                  ></i>
+                </span>
+
+                <input
+                  type="search"
+                  class="form-control alert-dark ms-0 mx-auto"
+                  placeholder="Find Your Favorite WebSite..."
+                  aria-label="Username"
+                  id="inputSearch"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <!-- ================== Table Data ================= -->
+              <table class="table text-center my-4">
                 <thead>
                   <tr>
                     <th>Index</th>
@@ -127,12 +164,11 @@
                     <th>Delete</th>
                   </tr>
                 </thead>
-    
-                <tbody id="tableData">
-                 
-                </tbody>
-          </table>
-      
+
+                <tbody id="tableData"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
     </main>

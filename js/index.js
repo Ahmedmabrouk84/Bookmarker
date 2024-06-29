@@ -1,14 +1,30 @@
-var webSitNameInput = document.getElementById("bookmarkName");
-var webSitUrlInput = document.getElementById("bookmarkURL");
-var webSitBoxInfo = document.getElementById("boxInfo");
+const webSitNameInput = document.getElementById("bookmarkName");
+const webSitUrlInput = document.getElementById("bookmarkURL");
+const webSitBoxInfo = document.getElementById("boxInfo");
+const SearchInput = document.getElementById("inputSearch");
 webSitList = [];
+
+//================ Click Event BoxInfo ==================
+
+document.addEventListener("click", function (e) {
+  if (e.target == webSitBoxInfo) {
+    webSitBoxInfo.classList.add("d-none");
+  }
+});
+
+// ======================================
+
+SearchInput.addEventListener("input", function () {
+  // SearchInput.value;
+  displayData();
+  // console.log( SearchInput.value);
+});
+
 //================= getItem From LocalStorage  ==================
 if (localStorage.getItem("webSitContanir") !== null) {
   webSitList = JSON.parse(localStorage.getItem("webSitContanir"));
   displayData();
 }
-
-
 //================= addWebSit ===================
 function addWebSit() {
   if (validationInputs(webSitNameInput) && validationInputs(webSitUrlInput)) {
@@ -20,8 +36,8 @@ function addWebSit() {
     webSitList.push(webSit);
     localStorage.setItem("webSitContanir", JSON.stringify(webSitList));
     // console.log(webSitList);
-    clearForm();
     displayData();
+    clearForm();
     webSitBoxInfo.classList.add("d-none");
   } else {
     webSitBoxInfo.classList.remove("d-none");
@@ -38,30 +54,33 @@ function clearForm() {
 //================= displayData =================
 function displayData() {
   var boxData = "";
+  let term = SearchInput.value;
 
-  for (var i = 1; i < webSitList.length; i++) {
-    boxData += `
-    <tr>
-    <td>${i}</td>
-    <td>${webSitList[i].webSitnName}</td>
-    <td>
-      <a id="btnVisit" onclick="visitItem(${i})" class="btn btn-visit">
-        <i class="fa-solid fa-eye pe-2"></i>
-        Visit
-      </a>
-    </td>
-    <td>
-      <button id="btnDelete" onclick="deletItem(${i})" class="btn btn-danger">
-        <i class="fa-solid fa-trash-can"></i>
-        Delete
-      </button>
-    </td>
-  </tr>
-    `;
+  for (let i = 0; i < webSitList.length; i++) {
+    if (webSitList[i].webSitnName.toLowerCase().includes(term.toLowerCase())) {
+      boxData += `
+      <tr>
+      <td>${i}</td>
+      <td>${webSitList[i].webSitnName}</td>
+      <td>
+        <a id="btnVisit" onclick="visitItem(${i})" class="btn btn-visit">
+          <i class="fa-solid fa-eye pe-2"></i>
+          Visit
+        </a>
+      </td>
+      <td>
+        <button id="btnDelete" onclick="deletItem(${i})" class="btn btn-danger">
+          <i class="fa-solid fa-trash-can"></i>
+          Delete
+        </button>
+      </td>
+    </tr>
+      `;
+    }
   }
-
   document.getElementById("tableData").innerHTML = boxData;
 }
+
 //================= DeletItem ===================
 function deletItem(indexItem) {
   webSitList.splice(indexItem, 1);
@@ -85,7 +104,7 @@ function visitItem(vistItem) {
 
 //================= Validation Item =============
 function validationInputs(element) {
-  var text = element.value;
+  let text = element.value;
   regex = {
     bookmarkName: /^\w{3,35}(\s+\w+)*$/gi,
     bookmarkURL:
