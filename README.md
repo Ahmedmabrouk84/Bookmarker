@@ -7,7 +7,7 @@
 <br>
 🔍 Advanced Search: Quickly find bookmarks using keyword search.
 <br>
-📂 Categorization & Organization: Create folders and tags to efficiently manage links.
+ Using Regex to Validate Input Data
 <br>
 🌐 Cloud Sync: Access your bookmarks from any internet-connected device.
 <br>
@@ -21,4 +21,3 @@
 <br>
 🔒 Security & Privacy: Data encryption ensures bookmarks are stored safely.
 <br>
-📑 Content Preview: View summaries or thumbnails of saved websites before opening them.
