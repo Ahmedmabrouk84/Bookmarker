@@ -7,7 +7,7 @@
 <br>
 🔍 Advanced Search: Quickly find bookmarks using keyword search.
 <br>
- Using Regex to Validate Input Data
+📌 Using Regex to Validate Input Data
 <br>
 🌐 Cloud Sync: Access your bookmarks from any internet-connected device.
 <br>
